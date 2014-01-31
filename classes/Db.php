@@ -112,7 +112,7 @@ class Db
 	 * @param string $query The query to be executed.
 	 * @param array $params (optional) A key/value array of parameters.
 	 * @param int $cacheTime The time, in seconds, to cache the result of the query.	Default: 30
-	 * @return Returns the full resultset as an array.
+	 * @return array|null Returns the full resultset as an array.
 	 */
 	public static function query($query, $params = array(), $cacheTime = 30)
 	{
@@ -159,12 +159,12 @@ class Db
 	 * @param string $query The query to be executed
 	 * @param array $parameters (optional) A key/value array of parameters
 	 * @param int $cacheTime The time, in seconds, to cache the result of the query.	Default: 30
-	 * @return Returns the first row of the result set. Returns null if there are no rows.
+	 * @return array|null Returns the first row of the result set. Returns null if there are no rows.
 	 */
 	public static function queryRow($query, $parameters = array(), $cacheTime = 30)
 	{
 		$result = Db::query($query, $parameters, $cacheTime);
-		if (sizeof($result) >= 1) return $result[0];
+		if (count($result) >= 1) return $result[0];
 		return null;
 	}
 
@@ -174,12 +174,12 @@ class Db
 	 * @param string $field The name of the field to return
 	 * @param array $parameters (optional) A key/value array of parameters
 	 * @param int $cacheTime The time, in seconds, to cache the result of the query.	Default: 30
-	 * @return null Returns the value of $field in the first row of the resultset. Returns null if there are no rows.
+	 * @return mixed Returns the value of $field in the first row of the resultset. Returns null if there are no rows.
 	 */
 	public static function queryField($query, $field, $parameters = array(), $cacheTime = 30)
 	{
 		$result = Db::query($query, $parameters, $cacheTime);
-		if (sizeof($result) == 0) return null;
+		if (count($result) == 0) return null;
 		$resultRow = $result[0];
 		return $resultRow[$field];
 	}

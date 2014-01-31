@@ -20,7 +20,6 @@ $t = microtime(true);
 //include_once("/var/killboard/xhprof/inc/prepend.php");
 
 // Fire up the session!
-session_cache_limiter(false);
 session_start();
 
 // Autoload Slim + Twig
@@ -34,11 +33,6 @@ $timer = new Timer();
 
 // Start slim and load the config from the config file
 $app = new \Slim\Slim($config);
-
-// Error handling
-$app->error(function (\Exception $e) use ($app){
-    include ( "view/error.php" );
-});
 
 // Check if the user has autologin turned on
 if(!User::isLoggedIn()) User::autoLogin();
