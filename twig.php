@@ -43,7 +43,7 @@ $twig->addGlobal("image_alliance", "https://image.eveonline.com/Alliance/");
 //$twig->addGlobal("requesturi", $_SERVER["REQUEST_URI"]);
 $twig->addGlobal("siteName", $siteName);
 
-$twig->addExtension(new UserGlobals());
+//$twig->addExtension(new UserGlobals());
 //require_once( "vendor/twig-markdown/lib/Twig/Extensions/Core.php" );
 
 //$twig->addExtension(new Twig_Markdown_Extension());
