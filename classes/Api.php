@@ -139,18 +139,6 @@ class Api
 				return $results;
 		}
 
-		/**
-		 * Tests the access mask for KillLog access
-		 *
-		 * @static
-		 * @param $accessMask
-		 * @return bool
-		 */
-		private static function hasBits($accessMask, $mask)
-		{
-				return ((int)($accessMask & $mask) > 0);
-		}
-
 		public static function processApi($keyRowID, $keyID = null, $vCode = null)
 		{
 				if ($keyID == null || $vCode == null) {
