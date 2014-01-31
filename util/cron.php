@@ -23,8 +23,7 @@ detectLogos();
 
 function detectLogos() {
 	$result = Db::query("select * from al_alliances where logoReleased is null and memberCount > 0 order by allianceID desc, lastChecked", array(), 0);
-	$size = count($result);
-	//echo "$size to check...\n";
+
 	$count = 0;
 	foreach($result as $row) {
 		$count ++;
@@ -43,30 +42,25 @@ function detectLogos() {
 }
 
 function updateAlliances() {
-		$allianceCount = 0;
-		$corporationCount = 0;
+	$allianceCount = 0;
 
-		$pheal = Util::getPheal();
-		$pheal->scope = "eve";
-		$list = null;
-		$exception = null;
-		try {
-				$list = $pheal->AllianceList();
-		} catch (Exception $ex) {
-				$exception = $ex;
+	$pheal = Util::getPheal();
+	$pheal->scope = "eve";
+	$list = null;
+
+	$list = $pheal->AllianceList();
+	if ($list != null && count($list->alliances) > 0) {
+		foreach ($list->alliances as $alliance) {
+			$allianceCount++;
+			$allianceID = $alliance['allianceID'];
+			$shortName = $alliance['shortName'];
+			$name = $alliance['name'];
+			$startDate = $alliance['startDate'];
+			$cnt = $alliance["memberCount"];
+			Db::execute("insert into al_alliances (allianceID, allianceName, allianceCreation, memberCount, shortName) 
+					values (:id, :name, :date, :cnt, :shortName)
+					on duplicate key update memberCount = :cnt, shortName = :shortName",
+					array(":id" => $allianceID, ":name" => $name, ":date" => $startDate, ":cnt" => $cnt, ":shortName" => $shortName));
 		}
-		if ($list != null && count($list->alliances) > 0) {
-				foreach ($list->alliances as $alliance) {
-						$allianceCount++;
-						$allianceID = $alliance['allianceID'];
-						$shortName = $alliance['shortName'];
-						$name = $alliance['name'];
-						$startDate = $alliance['startDate'];
-						$cnt = $alliance["memberCount"];
-						Db::execute("insert into al_alliances (allianceID, allianceName, allianceCreation, memberCount, shortName) 
-										values (:id, :name, :date, :cnt, :shortName)
-										on duplicate key update memberCount = :cnt, shortName = :shortName",
-							array(":id" => $allianceID, ":name" => $name, ":date" => $startDate, ":cnt" => $cnt, ":shortName" => $shortName));
-				}
-		}
+	}
 }
