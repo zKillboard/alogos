@@ -94,7 +94,7 @@ class Db
 	/**
 	 * @static
 	 * @throws Exception
-	 * @param	$statement
+	 * @param	PDOStatement $statement
 	 * @param	string $query
 	 * @param	array $parameters
 	 * @return void
