@@ -112,16 +112,16 @@ class Db
 	 * @param string $query The query to be executed.
 	 * @param array $params (optional) A key/value array of parameters.
 	 * @param int $cacheTime The time, in seconds, to cache the result of the query.	Default: 30
-	 * @return array|null Returns the full resultset as an array.
+	 * @return array Returns the full resultset as an array.
 	 */
 	public static function query($query, $params = array(), $cacheTime = 30)
 	{
 		// Basic sanity check.
 		if (strpos($query, ";") !== false) throw new Exception("Semicolons are not allowed in queries.  Use parameters instead.");
 
+		$key = Db::getKey($query, $params);
 		// cacheTime of 0 or less means skip all caches and just do the query
 		if ($cacheTime > 0) {
-			$key = Db::getKey($query, $params);
 
 			// First, check our local storage bin
 			$result = Bin::get($key, FALSE);
@@ -159,7 +159,7 @@ class Db
 	 * @param string $query The query to be executed
 	 * @param array $parameters (optional) A key/value array of parameters
 	 * @param int $cacheTime The time, in seconds, to cache the result of the query.	Default: 30
-	 * @return array|null Returns the first row of the result set. Returns null if there are no rows.
+	 * @return array Returns the first row of the result set. Returns null if there are no rows.
 	 */
 	public static function queryRow($query, $parameters = array(), $cacheTime = 30)
 	{

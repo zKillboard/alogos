@@ -23,7 +23,7 @@ detectLogos();
 
 function detectLogos() {
 	$result = Db::query("select * from al_alliances where logoReleased is null and memberCount > 0 order by allianceID desc, lastChecked", array(), 0);
-	$size = sizeof($result);
+	$size = count($result);
 	//echo "$size to check...\n";
 	$count = 0;
 	foreach($result as $row) {
@@ -55,7 +55,7 @@ function updateAlliances() {
 		} catch (Exception $ex) {
 				$exception = $ex;
 		}
-		if ($list != null && sizeof($list->alliances) > 0) {
+		if ($list != null && count($list->alliances) > 0) {
 				foreach ($list->alliances as $alliance) {
 						$allianceCount++;
 						$allianceID = $alliance['allianceID'];
