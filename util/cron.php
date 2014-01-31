@@ -46,7 +46,6 @@ function updateAlliances() {
 
 	$pheal = Util::getPheal();
 	$pheal->scope = "eve";
-	$list = null;
 
 	$list = $pheal->AllianceList();
 	if ($list != null && count($list->alliances) > 0) {
