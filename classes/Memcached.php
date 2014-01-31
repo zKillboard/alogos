@@ -36,6 +36,10 @@ class Memcached
 	}
 
 	// Define 1 hour std expiry time for objects
+
+	/**
+	 * @param string $key
+	 */
 	public static function set($key, $value, $timeout = '3600')
 	{
 		$mc = Memcached::getMC();
@@ -47,6 +51,9 @@ class Memcached
 		return true;
 	}
 
+	/**
+	 * @param string $key
+	 */
 	public static function get($key)
 	{
 		$mc = Memcached::getMC();
@@ -56,6 +63,10 @@ class Memcached
 
 	// Erases a key after [$timeout] seconds
 	// if that key exists
+
+	/**
+	 * @param string $key
+	 */
 	public static function delete($key, $timeout = 0)
 	{
 		$mc = Memcached::getMC();

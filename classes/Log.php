@@ -24,6 +24,9 @@ class Log
 		trigger_error('The class "log" may only be invoked statically.', E_USER_ERROR);
 	}
 
+	/**
+	 * @param string $text
+	 */
 	public static function log($text)
 	{
 		error_log(date("Ymd H:i:s") . " $text \n", 3, "/var/log/www/logos.zzeve.com.log");

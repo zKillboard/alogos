@@ -39,6 +39,9 @@ class Util
 		return (substr($haystack, 0, $length) === $needle);
 	}
 
+	/**
+	 * @param string $needle
+	 */
 	public static function endsWith($haystack, $needle)
 	{
 		return substr($haystack, -strlen($needle)) === $needle;
