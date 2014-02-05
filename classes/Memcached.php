@@ -73,6 +73,9 @@ class Memcached
 		return $mc->delete($key, $timeout);
 	}
 
+	/**
+	 * @param string $key
+	 */
 	public static function increment($key, $timeout = 3600)
 	{
 		$mc = Memcached::getMC();
@@ -80,6 +83,9 @@ class Memcached
 		return $mc->increment($key);
 	}
 
+	/**
+	 * @param string $key
+	 */
 	public static function decrement($key, $timeout = 3600)
 	{
 		$mc = Memcached::getMC();
