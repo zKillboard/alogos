@@ -44,7 +44,7 @@ function detectLogos() {
 function updateAlliances() {
 	$allianceCount = 0;
 
-	$pheal = Util::getPheal();
+	$pheal = new Pheal();
 	$pheal->scope = "eve";
 
 	$list = $pheal->AllianceList();
