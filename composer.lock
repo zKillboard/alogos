@@ -40,16 +40,16 @@
         },
         {
             "name": "cvweiss/zlibrary",
-            "version": "v0.1",
+            "version": "v0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cvweiss/zlibrary.git",
-                "reference": "8d2a87a6476047bf8a224496ea4c5e2b4bf7b73e"
+                "reference": "ea99756e7d6cce0467477d1b2f77f27de82cd047"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cvweiss/zlibrary/zipball/8d2a87a6476047bf8a224496ea4c5e2b4bf7b73e",
-                "reference": "8d2a87a6476047bf8a224496ea4c5e2b4bf7b73e",
+                "url": "https://api.github.com/repos/cvweiss/zlibrary/zipball/ea99756e7d6cce0467477d1b2f77f27de82cd047",
+                "reference": "ea99756e7d6cce0467477d1b2f77f27de82cd047",
                 "shasum": ""
             },
             "require": {
@@ -72,7 +72,7 @@
                 }
             ],
             "description": "Library of classes to simplify various tasks",
-            "time": "2014-02-20 17:21:56"
+            "time": "2014-02-20 18:01:09"
         },
         {
             "name": "michelf/php-markdown",
