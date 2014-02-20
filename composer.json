@@ -6,7 +6,8 @@
         "twig/extensions": "1.*",
         "michelf/php-markdown": "*",
         "pheal/pheal": "*",
-        "phpmailer/phpmailer": "*"
+        "phpmailer/phpmailer": "*",
+	"cvweiss/zlibrary": "*"
     },
     "minimum-stability": "stable",
 	"prefer-stable": true
