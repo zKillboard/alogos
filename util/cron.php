@@ -25,7 +25,7 @@ function detectLogos() {
 	$result = Db::query("select * from al_alliances where logoReleased is null and memberCount > 0 order by allianceID desc, lastChecked", array(), 0);
 
 	$count = 0;
-	foreach($result as $row) {
+	if (is_array($result)) foreach($result as $row) {
 		$count ++;
 		//echo ".";
 		$id = $row["allianceID"];
