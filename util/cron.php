@@ -18,11 +18,11 @@
 
 require_once __DIR__ . "/../init.php";
 
-updateAlliances();
+//updateAlliances();
 detectLogos();
 
 function detectLogos() {
-	$result = Db::query("select * from al_alliances where logoReleased is null and memberCount > 0 order by allianceID desc, lastChecked", array(), 0);
+	$result = Db::query("select * from al_alliances where allianceID = 378195357 and logoReleased is null and memberCount > 0 order by allianceID desc, lastChecked", array(), 0);
 
 	$count = 0;
 	if (is_array($result)) foreach($result as $row) {
@@ -34,9 +34,8 @@ function detectLogos() {
 		if (strlen($logo) == 0) continue;
 		$md5 = md5($logo);
 		Db::execute("update al_alliances set lastChecked = now() where allianceID = :id", array(":id" => $id));
-		//if ($count % 100 == 0) echo "\n$count / $size\n";
 		if ($md5 == "3d691b2e000df264270745a68fdf047c") continue;
-		echo "\n$id $name\n";
+		echo "$id $name $md5\n";
 		Db::execute("update al_alliances set logoReleased = date(now()) where allianceID = :id", array(":id" => $id));
 	}
 }
