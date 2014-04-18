@@ -18,16 +18,15 @@
 
 require_once __DIR__ . "/../init.php";
 
-//updateAlliances();
+updateAlliances();
 detectLogos();
 
 function detectLogos() {
-	$result = Db::query("select * from al_alliances where allianceID = 378195357 and logoReleased is null and memberCount > 0 order by allianceID desc, lastChecked", array(), 0);
+	$result = Db::query("select * from al_alliances where logoReleased is null and memberCount > 0 order by allianceID desc, lastChecked", array(), 0);
 
 	$count = 0;
 	if (is_array($result)) foreach($result as $row) {
 		$count ++;
-		//echo ".";
 		$id = $row["allianceID"];
 		$name = $row["allianceName"];
 		$logo = @file_get_contents("https://image.eveonline.com/Alliance/{$id}_128.png");
