@@ -22,7 +22,7 @@ updateAlliances();
 detectLogos();
 
 function detectLogos() {
-	$result = Db::query("select * from al_alliances where logoReleased is null and memberCount > 0 order by allianceID desc, lastChecked", array(), 0);
+	$result = Db::query("select * from al_alliances where logoReleased is null and memberCount > 0 order by memberCount desc", array(), 0);
 
 	$count = 0;
 	if (is_array($result)) foreach($result as $row) {
