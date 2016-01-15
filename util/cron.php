@@ -22,7 +22,7 @@ updateAlliances();
 detectLogos();
 
 function detectLogos() {
-	$result = Db::query("select * from al_alliances where logoReleased is null and memberCount > 0 order by memberCount desc", array(), 0);
+	$result = Db::query("select * from al_alliances where logoReleased is not null", array(), 0);
 
 	$count = 0;
 	if (is_array($result)) foreach($result as $row) {
@@ -33,8 +33,10 @@ function detectLogos() {
 		if (strlen($logo) == 0) continue;
 		$md5 = md5($logo);
 		Db::execute("update al_alliances set lastChecked = now() where allianceID = :id", array(":id" => $id));
-		if ($md5 == "3d691b2e000df264270745a68fdf047c") continue;
-		echo "$id $name $md5\n";
+		if ($md5 == "3d691b2e000df264270745a68fdf047c") {
+			Db::execute("update al_alliances set logoReleased = null where allianceID = :id", array(":id" => $id));
+			continue;
+		}
 		Db::execute("update al_alliances set logoReleased = date(now()) where allianceID = :id", array(":id" => $id));
 	}
 }
