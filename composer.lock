@@ -1,22 +1,24 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
     "hash": "25a15ecd7336f9c4b5e989b2f578439d",
+    "content-hash": "922a4622476ac5a5d9ccae33b1772767",
     "packages": [
         {
             "name": "cvweiss/zcache",
-            "version": "v0.1",
+            "version": "v0.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cvweiss/zcache.git",
-                "reference": "181de27984b596be5ef98314de98643e0419064c"
+                "reference": "c502ab29aa72a7be2b342ca731a692f4560cd3e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cvweiss/zcache/zipball/181de27984b596be5ef98314de98643e0419064c",
-                "reference": "181de27984b596be5ef98314de98643e0419064c",
+                "url": "https://api.github.com/repos/cvweiss/zcache/zipball/c502ab29aa72a7be2b342ca731a692f4560cd3e4",
+                "reference": "c502ab29aa72a7be2b342ca731a692f4560cd3e4",
                 "shasum": ""
             },
             "type": "library",
@@ -36,20 +38,20 @@
                 }
             ],
             "description": "Library of classes to simplify caching",
-            "time": "2014-02-20 17:06:50"
+            "time": "2014-05-15 19:36:29"
         },
         {
             "name": "cvweiss/zlibrary",
-            "version": "v0.1.1",
+            "version": "v0.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cvweiss/zlibrary.git",
-                "reference": "ea99756e7d6cce0467477d1b2f77f27de82cd047"
+                "reference": "999dd5c09ee9ecb3c7ebc17334d945b55b76ce28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cvweiss/zlibrary/zipball/ea99756e7d6cce0467477d1b2f77f27de82cd047",
-                "reference": "ea99756e7d6cce0467477d1b2f77f27de82cd047",
+                "url": "https://api.github.com/repos/cvweiss/zlibrary/zipball/999dd5c09ee9ecb3c7ebc17334d945b55b76ce28",
+                "reference": "999dd5c09ee9ecb3c7ebc17334d945b55b76ce28",
                 "shasum": ""
             },
             "require": {
@@ -72,20 +74,20 @@
                 }
             ],
             "description": "Library of classes to simplify various tasks",
-            "time": "2014-02-20 18:01:09"
+            "time": "2014-05-13 14:04:08"
         },
         {
             "name": "michelf/php-markdown",
-            "version": "1.4.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/michelf/php-markdown.git",
-                "reference": "96d8150406f67e683ef4acc09fef91785fef1266"
+                "reference": "156e56ee036505ec637d761ee62dc425d807183c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/96d8150406f67e683ef4acc09fef91785fef1266",
-                "reference": "96d8150406f67e683ef4acc09fef91785fef1266",
+                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/156e56ee036505ec637d761ee62dc425d807183c",
+                "reference": "156e56ee036505ec637d761ee62dc425d807183c",
                 "shasum": ""
             },
             "require": {
@@ -110,33 +112,33 @@
                 {
                     "name": "Michel Fortin",
                     "email": "michel.fortin@michelf.ca",
-                    "homepage": "http://michelf.ca/",
+                    "homepage": "https://michelf.ca/",
                     "role": "Developer"
                 },
                 {
                     "name": "John Gruber",
-                    "homepage": "http://daringfireball.net/"
+                    "homepage": "https://daringfireball.net/"
                 }
             ],
             "description": "PHP Markdown",
-            "homepage": "http://michelf.ca/projects/php-markdown/",
+            "homepage": "https://michelf.ca/projects/php-markdown/",
             "keywords": [
                 "markdown"
             ],
-            "time": "2013-11-29 17:09:24"
+            "time": "2015-12-24 01:37:31"
         },
         {
             "name": "pheal/pheal",
-            "version": "0.1.15",
+            "version": "0.1.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ppetermann/pheal.git",
-                "reference": "e07be95e534bdf56a010f5487d103e7189476e57"
+                "reference": "06821f1603e385f3e52a29ce8603b2e024b9279c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ppetermann/pheal/zipball/e07be95e534bdf56a010f5487d103e7189476e57",
-                "reference": "e07be95e534bdf56a010f5487d103e7189476e57",
+                "url": "https://api.github.com/repos/ppetermann/pheal/zipball/06821f1603e385f3e52a29ce8603b2e024b9279c",
+                "reference": "06821f1603e385f3e52a29ce8603b2e024b9279c",
                 "shasum": ""
             },
             "type": "library",
@@ -167,20 +169,20 @@
                 "EVE Online",
                 "Pheal"
             ],
-            "time": "2013-10-29 16:01:55"
+            "time": "2015-11-21 11:06:48"
         },
         {
             "name": "phpmailer/phpmailer",
-            "version": "v5.2.7",
+            "version": "v5.2.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPMailer/PHPMailer.git",
-                "reference": "8717a79565b2c0ed67f851d70e1949febdf3b226"
+                "reference": "e774bc9152de85547336e22b8926189e582ece95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/8717a79565b2c0ed67f851d70e1949febdf3b226",
-                "reference": "8717a79565b2c0ed67f851d70e1949febdf3b226",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/e774bc9152de85547336e22b8926189e582ece95",
+                "reference": "e774bc9152de85547336e22b8926189e582ece95",
                 "shasum": ""
             },
             "require": {
@@ -188,14 +190,22 @@
             },
             "require-dev": {
                 "phpdocumentor/phpdocumentor": "*",
-                "phpunit/phpunit": "*"
+                "phpunit/phpunit": "4.7.*"
+            },
+            "suggest": {
+                "league/oauth2-client": "Needed for XOAUTH2 authentication",
+                "league/oauth2-google": "Needed for Gmail XOAUTH2"
             },
             "type": "library",
             "autoload": {
                 "classmap": [
                     "class.phpmailer.php",
+                    "class.phpmaileroauth.php",
+                    "class.phpmaileroauthgoogle.php",
+                    "class.smtp.php",
                     "class.pop3.php",
-                    "class.smtp.php"
+                    "extras/EasyPeasyICS.php",
+                    "extras/ntlm_sasl_client.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -220,7 +230,7 @@
                 }
             ],
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
-            "time": "2013-09-12 07:52:38"
+            "time": "2015-11-01 10:15:28"
         },
         {
             "name": "slim/extras",
@@ -277,12 +287,12 @@
             "version": "2.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/codeguy/Slim.git",
+                "url": "https://github.com/slimphp/Slim.git",
                 "reference": "6de1151b3cb0b44ab489f3bf7d408ce4719e61e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codeguy/Slim/zipball/6de1151b3cb0b44ab489f3bf7d408ce4719e61e3",
+                "url": "https://api.github.com/repos/slimphp/Slim/zipball/6de1151b3cb0b44ab489f3bf7d408ce4719e61e3",
                 "reference": "6de1151b3cb0b44ab489f3bf7d408ce4719e61e3",
                 "shasum": ""
             },
@@ -320,12 +330,12 @@
             "version": "v1.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/fabpot/Twig-extensions.git",
+                "url": "https://github.com/twigphp/Twig-extensions.git",
                 "reference": "f91a82ec225e5bb108e01a0f93c9be04f84dcfa0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig-extensions/zipball/f91a82ec225e5bb108e01a0f93c9be04f84dcfa0",
+                "url": "https://api.github.com/repos/twigphp/Twig-extensions/zipball/f91a82ec225e5bb108e01a0f93c9be04f84dcfa0",
                 "reference": "f91a82ec225e5bb108e01a0f93c9be04f84dcfa0",
                 "shasum": ""
             },
@@ -367,12 +377,12 @@
             "version": "v1.10.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/fabpot/Twig.git",
+                "url": "https://github.com/twigphp/Twig.git",
                 "reference": "60e91ba6918170ada88c66501af85d7c10b94a13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/60e91ba6918170ada88c66501af85d7c10b94a13",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/60e91ba6918170ada88c66501af85d7c10b94a13",
                 "reference": "60e91ba6918170ada88c66501af85d7c10b94a13",
                 "shasum": ""
             },
@@ -412,20 +422,12 @@
             "time": "2012-09-28 20:11:39"
         }
     ],
-    "packages-dev": [
-
-    ],
-    "aliases": [
-
-    ],
+    "packages-dev": [],
+    "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
-    "platform": [
-
-    ],
-    "platform-dev": [
-
-    ]
+    "stability-flags": [],
+    "prefer-stable": true,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
 }

@@ -22,22 +22,33 @@ updateAlliances();
 detectLogos();
 
 function detectLogos() {
-	$result = Db::query("select * from al_alliances where logoReleased is not null", array(), 0);
+	$result = Db::query("select * from al_alliances where memberCount > 0 and lastChecked < date_sub(now(), interval 12 hour) and logoReleased is null", [], 0);
 
 	$count = 0;
-	if (is_array($result)) foreach($result as $row) {
+	foreach($result as $row) {
 		$count ++;
 		$id = $row["allianceID"];
 		$name = $row["allianceName"];
-		$logo = @file_get_contents("https://image.eveonline.com/Alliance/{$id}_128.png");
-		if (strlen($logo) == 0) continue;
-		$md5 = md5($logo);
+
+		$url = "https://image.eveonline.com/Alliance/{$id}_128.png";
+echo "$url ";
+
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_USERAGENT, "Fetcher for http://logos.zzeve.com");
+		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
+		curl_setopt($ch, CURLOPT_TIMEOUT, 30); //timeout in seconds
+		$logo = curl_exec($ch);
+		$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
 		Db::execute("update al_alliances set lastChecked = now() where allianceID = :id", array(":id" => $id));
-		if ($md5 == "3d691b2e000df264270745a68fdf047c") {
+		echo "$id $httpCode\n";
+		if ($httpCode == 302) {
 			Db::execute("update al_alliances set logoReleased = null where allianceID = :id", array(":id" => $id));
 			continue;
 		}
-		Db::execute("update al_alliances set logoReleased = date(now()) where allianceID = :id", array(":id" => $id));
+		Db::execute("update al_alliances set logoReleased = now() where allianceID = :id and logoReleased is null", array(":id" => $id));
 	}
 }
 
