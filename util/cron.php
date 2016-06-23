@@ -31,7 +31,6 @@ function detectLogos() {
 		$name = $row["allianceName"];
 
 		$url = "https://image.eveonline.com/Alliance/{$id}_128.png";
-echo "$url ";
 
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
@@ -55,6 +54,7 @@ echo "$url ";
 function updateAlliances() {
 	$allianceCount = 0;
 
+	Db::execute("update al_alliances set memberCount = 0");
 	$pheal = new Pheal();
 	$pheal->scope = "eve";
 
