@@ -7,7 +7,7 @@
 <div class="well pull-left" style="margin-right: 1em; padding-left: 1em;">
 {% for key, alli in latest %}
 		<div class="pull-left" style="text-align: center; width: 64px; height: 100px !important; max-height: 90px; margin-right: 1em; overflow: hidden; text-overflow: ellipsis;"> 
-			<a target="_blank" href="https://zkillboard.com/alliance/{{ alli.allianceID }}/"><img src="https://eveimages-15b9.kxcdn.com/Alliance/{{ alli.allianceID }}_64.png" style="width: 64px; height: 64px;" class="eveimage img-rounded" rel="tooltip" title="{{ alli.allianceName|escape }}"></a>
+			<a target="_blank" href="https://zkillboard.com/alliance/{{ alli.allianceID }}/"><img src="https://image.eveonline.com/Alliance/{{ alli.allianceID }}_64.png" style="width: 64px; height: 64px;" class="eveimage img-rounded" rel="tooltip" title="{{ alli.allianceName|escape }}"></a>
 			{% if alli.shortName %}<small>&lt;{{ alli.shortName }}&gt;</small>{% else %}<small style='font-size: 8px;'>{{ alli.allianceName }}</small>{% endif %}
 		</div>
 {% endfor %}
@@ -34,7 +34,7 @@
 		{% endif %}
 
 		<div class="pull-left" style="text-align: center; width: 64px; height: 100px !important; max-height: 90px; margin-right: 1em; overflow: hidden; text-overflow: ellipsis;"> 
-			<a target="_blank" href="https://zkillboard.com/alliance/{{ alli.allianceID }}/"><img src="https://eveimages-15b9.kxcdn.com/Alliance/{{ alli.allianceID }}_64.png" style="width: 64px; height: 64px;" class="eveimage img-rounded" rel="tooltip" title="{{ alli.allianceName|escape }}"></a>
+			<a target="_blank" href="https://zkillboard.com/alliance/{{ alli.allianceID }}/"><img src="https://image.eveonline.com/Alliance/{{ alli.allianceID }}_64.png" style="width: 64px; height: 64px;" class="eveimage img-rounded" rel="tooltip" title="{{ alli.allianceName|escape }}"></a>
 			{% if alli.shortName %}<small>&lt;{{ alli.shortName }}&gt;</small>{% else %}<small style='font-size: 8px;'>{{ alli.allianceName }}</small>{% endif %}
 		</div>
 	{% endfor %}
