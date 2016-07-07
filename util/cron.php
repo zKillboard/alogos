@@ -42,7 +42,7 @@ function detectLogos() {
 		$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
 		Db::execute("update al_alliances set lastChecked = now() where allianceID = :id", array(":id" => $id));
-		echo "$id $httpCode\n";
+		//echo "$id $httpCode\n";
 		if ($httpCode == 302) {
 			Db::execute("update al_alliances set logoReleased = null where allianceID = :id", array(":id" => $id));
 			continue;
