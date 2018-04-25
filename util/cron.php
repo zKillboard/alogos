@@ -19,10 +19,10 @@
 require_once __DIR__ . "/../init.php";
 
 updateAlliances();
-detectLogos();
+//detectLogos();
 
 function detectLogos() {
-	$result = Db::query("select * from al_alliances where memberCount > 0 and lastChecked < date_sub(now(), interval 12 hour) and logoReleased is null", [], 0);
+	$result = Db::query("select * from al_alliances where logoReleased is null"); // where memberCount > 0 and lastChecked < date_sub(now(), interval 12 hour) and logoReleased is null", [], 0);
 
 	$count = 0;
 	foreach($result as $row) {
@@ -30,7 +30,8 @@ function detectLogos() {
 		$id = $row["allianceID"];
 		$name = $row["allianceName"];
 
-		$url = "https://image.eveonline.com/Alliance/{$id}_128.png";
+		//$url = "https://image.eveonline.com/Alliance/{$id}_128.png";
+		$url = "https://imageserver.eveonline.com/Alliance/{$id}_128.png";
 
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
@@ -42,12 +43,13 @@ function detectLogos() {
 		$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
 		Db::execute("update al_alliances set lastChecked = now() where allianceID = :id", array(":id" => $id));
-		//echo "$id $httpCode\n";
 		if ($httpCode == 302) {
 			Db::execute("update al_alliances set logoReleased = null where allianceID = :id", array(":id" => $id));
-			continue;
 		}
-		Db::execute("update al_alliances set logoReleased = now() where allianceID = :id and logoReleased is null", array(":id" => $id));
+		else if ($httpCode == 200) {
+echo "$id $name $httpCode\n";
+			Db::execute("update al_alliances set logoReleased = now() where allianceID = :id and logoReleased is null", array(":id" => $id));
+		}
 	}
 }
 
@@ -71,6 +73,7 @@ function updateAlliances() {
 					values (:id, :name, :date, :cnt, :shortName)
 					on duplicate key update memberCount = :cnt, shortName = :shortName",
 					array(":id" => $allianceID, ":name" => $name, ":date" => $startDate, ":cnt" => $cnt, ":shortName" => $shortName));
+			if ($name != "") Db::execute("update al_alliances set allianceName = :name where allianceID = :id", [':id' => $allianceID, ':name' => $name]);
 		}
 	}
 }
