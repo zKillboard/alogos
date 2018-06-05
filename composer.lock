@@ -1,24 +1,23 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "25a15ecd7336f9c4b5e989b2f578439d",
-    "content-hash": "922a4622476ac5a5d9ccae33b1772767",
+    "content-hash": "829fd89d51be49890dde28bc0e5a53f8",
     "packages": [
         {
             "name": "cvweiss/zcache",
-            "version": "v0.1.3",
+            "version": "v0.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cvweiss/zcache.git",
-                "reference": "c502ab29aa72a7be2b342ca731a692f4560cd3e4"
+                "reference": "f59dc70bd70e8eb4388d8ab6d3e1450a6bfbfacb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cvweiss/zcache/zipball/c502ab29aa72a7be2b342ca731a692f4560cd3e4",
-                "reference": "c502ab29aa72a7be2b342ca731a692f4560cd3e4",
+                "url": "https://api.github.com/repos/cvweiss/zcache/zipball/f59dc70bd70e8eb4388d8ab6d3e1450a6bfbfacb",
+                "reference": "f59dc70bd70e8eb4388d8ab6d3e1450a6bfbfacb",
                 "shasum": ""
             },
             "type": "library",
@@ -29,7 +28,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GNU Affero General Public License"
+                "Unlicense"
             ],
             "authors": [
                 {
@@ -38,20 +37,20 @@
                 }
             ],
             "description": "Library of classes to simplify caching",
-            "time": "2014-05-15 19:36:29"
+            "time": "2018-05-15T22:01:27+00:00"
         },
         {
             "name": "cvweiss/zlibrary",
-            "version": "v0.3.2",
+            "version": "v0.3.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cvweiss/zlibrary.git",
-                "reference": "999dd5c09ee9ecb3c7ebc17334d945b55b76ce28"
+                "reference": "e5cf24ee2d91bd5bfd6642f19a887009c63e2b39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cvweiss/zlibrary/zipball/999dd5c09ee9ecb3c7ebc17334d945b55b76ce28",
-                "reference": "999dd5c09ee9ecb3c7ebc17334d945b55b76ce28",
+                "url": "https://api.github.com/repos/cvweiss/zlibrary/zipball/e5cf24ee2d91bd5bfd6642f19a887009c63e2b39",
+                "reference": "e5cf24ee2d91bd5bfd6642f19a887009c63e2b39",
                 "shasum": ""
             },
             "require": {
@@ -65,7 +64,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GNU Affero General Public License"
+                "Unlicense"
             ],
             "authors": [
                 {
@@ -74,34 +73,29 @@
                 }
             ],
             "description": "Library of classes to simplify various tasks",
-            "time": "2014-05-13 14:04:08"
+            "time": "2018-03-03T16:31:19+00:00"
         },
         {
             "name": "michelf/php-markdown",
-            "version": "1.6.0",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/michelf/php-markdown.git",
-                "reference": "156e56ee036505ec637d761ee62dc425d807183c"
+                "reference": "01ab082b355bf188d907b9929cd99b2923053495"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/156e56ee036505ec637d761ee62dc425d807183c",
-                "reference": "156e56ee036505ec637d761ee62dc425d807183c",
+                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/01ab082b355bf188d907b9929cd99b2923053495",
+                "reference": "01ab082b355bf188d907b9929cd99b2923053495",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-lib": "1.4.x-dev"
-                }
-            },
             "autoload": {
-                "psr-0": {
-                    "Michelf": ""
+                "psr-4": {
+                    "Michelf\\": "Michelf/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -125,112 +119,7 @@
             "keywords": [
                 "markdown"
             ],
-            "time": "2015-12-24 01:37:31"
-        },
-        {
-            "name": "pheal/pheal",
-            "version": "0.1.17",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ppetermann/pheal.git",
-                "reference": "06821f1603e385f3e52a29ce8603b2e024b9279c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ppetermann/pheal/zipball/06821f1603e385f3e52a29ce8603b2e024b9279c",
-                "reference": "06821f1603e385f3e52a29ce8603b2e024b9279c",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "PhealLoadMe.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Peter Petermann",
-                    "email": "ppetermann80@googlemail.com",
-                    "homepage": "http://devedge.eu"
-                },
-                {
-                    "name": "Wollari",
-                    "homepage": "http://evemaps.dotlan.net/"
-                }
-            ],
-            "description": "PHP Eve Api Library, a simple PHP lib to access the EVE Online API",
-            "homepage": "https://github.com/ppetermann/pheal",
-            "keywords": [
-                "EVE API",
-                "EVE Online",
-                "Pheal"
-            ],
-            "time": "2015-11-21 11:06:48"
-        },
-        {
-            "name": "phpmailer/phpmailer",
-            "version": "v5.2.14",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PHPMailer/PHPMailer.git",
-                "reference": "e774bc9152de85547336e22b8926189e582ece95"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/e774bc9152de85547336e22b8926189e582ece95",
-                "reference": "e774bc9152de85547336e22b8926189e582ece95",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.0.0"
-            },
-            "require-dev": {
-                "phpdocumentor/phpdocumentor": "*",
-                "phpunit/phpunit": "4.7.*"
-            },
-            "suggest": {
-                "league/oauth2-client": "Needed for XOAUTH2 authentication",
-                "league/oauth2-google": "Needed for Gmail XOAUTH2"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "class.phpmailer.php",
-                    "class.phpmaileroauth.php",
-                    "class.phpmaileroauthgoogle.php",
-                    "class.smtp.php",
-                    "class.pop3.php",
-                    "extras/EasyPeasyICS.php",
-                    "extras/ntlm_sasl_client.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-2.1"
-            ],
-            "authors": [
-                {
-                    "name": "Jim Jagielski",
-                    "email": "jimjag@gmail.com"
-                },
-                {
-                    "name": "Marcus Bointon",
-                    "email": "phpmailer@synchromedia.co.uk"
-                },
-                {
-                    "name": "Andy Prevost",
-                    "email": "codeworxtech@users.sourceforge.net"
-                },
-                {
-                    "name": "Brent R. Matzelle"
-                }
-            ],
-            "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
-            "time": "2015-11-01 10:15:28"
+            "time": "2018-01-15T00:49:33+00:00"
         },
         {
             "name": "slim/extras",
@@ -280,7 +169,7 @@
                 "extensions",
                 "templating"
             ],
-            "time": "2012-09-10 00:38:53"
+            "time": "2012-09-10T00:38:53+00:00"
         },
         {
             "name": "slim/slim",
@@ -323,7 +212,7 @@
                 "rest",
                 "router"
             ],
-            "time": "2012-09-12 16:07:46"
+            "time": "2012-09-12T16:07:46+00:00"
         },
         {
             "name": "twig/extensions",
@@ -370,7 +259,7 @@
                 "i18n",
                 "text"
             ],
-            "time": "2013-10-18 19:37:15"
+            "time": "2013-10-18T19:37:15+00:00"
         },
         {
             "name": "twig/twig",
@@ -419,7 +308,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2012-09-28 20:11:39"
+            "time": "2012-09-28T20:11:39+00:00"
         }
     ],
     "packages-dev": [],

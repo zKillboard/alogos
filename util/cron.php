@@ -22,7 +22,7 @@ updateAlliances();
 //detectLogos();
 
 function detectLogos() {
-	$result = Db::query("select * from al_alliances where logoReleased is null"); // where memberCount > 0 and lastChecked < date_sub(now(), interval 12 hour) and logoReleased is null", [], 0);
+	$result = Db::query("select * from al_alliances where logoReleased is null");
 
 	$count = 0;
 	foreach($result as $row) {
@@ -56,24 +56,22 @@ echo "$id $name $httpCode\n";
 function updateAlliances() {
 	$allianceCount = 0;
 
+	$alliRaw = @file_get_contents("https://esi.evetech.net/v1/alliances/");
+	$alliances = json_decode($alliRaw, true);
 	Db::execute("update al_alliances set memberCount = 0");
-	$pheal = new Pheal();
-	$pheal->scope = "eve";
+	foreach ($alliances as $allianceID) {
+		$allianceCount++;
 
-	$list = $pheal->AllianceList();
-	if ($list != null && count($list->alliances) > 0) {
-		foreach ($list->alliances as $alliance) {
-			$allianceCount++;
-			$allianceID = $alliance['allianceID'];
-			$shortName = $alliance['shortName'];
-			$name = $alliance['name'];
-			$startDate = $alliance['startDate'];
-			$cnt = $alliance["memberCount"];
-			Db::execute("insert into al_alliances (allianceID, allianceName, allianceCreation, memberCount, shortName) 
-					values (:id, :name, :date, :cnt, :shortName)
-					on duplicate key update memberCount = :cnt, shortName = :shortName",
-					array(":id" => $allianceID, ":name" => $name, ":date" => $startDate, ":cnt" => $cnt, ":shortName" => $shortName));
-			if ($name != "") Db::execute("update al_alliances set allianceName = :name where allianceID = :id", [':id' => $allianceID, ':name' => $name]);
-		}
+		$allianceRaw = @file_get_contents("https://esi.evetech.net/v3/alliances/$allianceID/");
+		$alliance = json_decode($allianceRaw, true);
+		if (!isset($alliance['name'])) continue;
+
+		$shortName = $alliance['ticker'];
+		$name = $alliance['name'];
+		$startDate = $alliance['date_founded'];
+		Db::execute("insert into al_alliances (allianceID, allianceName, allianceCreation, shortName) 
+				values (:id, :name, :date, :shortName)
+				on duplicate key update shortName = :shortName, allianceName = :name",
+				array(":id" => $allianceID, ":name" => $name, ":date" => $startDate, ":shortName" => $shortName));
 	}
 }
