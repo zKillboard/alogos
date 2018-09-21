@@ -19,7 +19,7 @@
 require_once __DIR__ . "/../init.php";
 
 updateAlliances();
-//detectLogos();
+detectLogos();
 
 function detectLogos() {
 	$result = Db::query("select * from al_alliances where logoReleased is null");
