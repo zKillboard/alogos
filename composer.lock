@@ -37,6 +37,10 @@
                 }
             ],
             "description": "Library of classes to simplify caching",
+            "support": {
+                "issues": "https://github.com/cvweiss/zcache/issues",
+                "source": "https://github.com/cvweiss/zcache/tree/v0.1.5"
+            },
             "time": "2018-05-15T22:01:27+00:00"
         },
         {
@@ -73,24 +77,31 @@
                 }
             ],
             "description": "Library of classes to simplify various tasks",
+            "support": {
+                "issues": "https://github.com/cvweiss/zlibrary/issues",
+                "source": "https://github.com/cvweiss/zlibrary/tree/master"
+            },
             "time": "2018-03-03T16:31:19+00:00"
         },
         {
             "name": "michelf/php-markdown",
-            "version": "1.8.0",
+            "version": "1.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/michelf/php-markdown.git",
-                "reference": "01ab082b355bf188d907b9929cd99b2923053495"
+                "reference": "5024d623c1a057dcd2d076d25b7d270a1d0d55f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/01ab082b355bf188d907b9929cd99b2923053495",
-                "reference": "01ab082b355bf188d907b9929cd99b2923053495",
+                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/5024d623c1a057dcd2d076d25b7d270a1d0d55f3",
+                "reference": "5024d623c1a057dcd2d076d25b7d270a1d0d55f3",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=4.3 <5.8"
             },
             "type": "library",
             "autoload": {
@@ -119,7 +130,11 @@
             "keywords": [
                 "markdown"
             ],
-            "time": "2018-01-15T00:49:33+00:00"
+            "support": {
+                "issues": "https://github.com/michelf/php-markdown/issues",
+                "source": "https://github.com/michelf/php-markdown/tree/1.9.1"
+            },
+            "time": "2021-11-24T02:52:38+00:00"
         },
         {
             "name": "slim/extras",
@@ -143,8 +158,8 @@
             "type": "library",
             "autoload": {
                 "psr-0": {
-                    "Twig_Extensions_": "Views/Extension/",
-                    "Slim\\Extras": "."
+                    "Slim\\Extras": ".",
+                    "Twig_Extensions_": "Views/Extension/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -169,6 +184,10 @@
                 "extensions",
                 "templating"
             ],
+            "support": {
+                "issues": "https://github.com/codeguy/Slim-Extras/issues",
+                "source": "https://github.com/codeguy/Slim-Extras/tree/2.0.0"
+            },
             "time": "2012-09-10T00:38:53+00:00"
         },
         {
@@ -212,6 +231,10 @@
                 "rest",
                 "router"
             ],
+            "support": {
+                "issues": "https://github.com/slimphp/Slim/issues",
+                "source": "https://github.com/slimphp/Slim/tree/2.1.0"
+            },
             "time": "2012-09-12T16:07:46+00:00"
         },
         {
@@ -259,6 +282,11 @@
                 "i18n",
                 "text"
             ],
+            "support": {
+                "issues": "https://github.com/twigphp/Twig-extensions/issues",
+                "source": "https://github.com/twigphp/Twig-extensions/tree/v1.0.1"
+            },
+            "abandoned": true,
             "time": "2013-10-18T19:37:15+00:00"
         },
         {
@@ -308,6 +336,10 @@
             "keywords": [
                 "templating"
             ],
+            "support": {
+                "issues": "https://github.com/twigphp/Twig/issues",
+                "source": "https://github.com/twigphp/Twig/tree/v1.10.0"
+            },
             "time": "2012-09-28T20:11:39+00:00"
         }
     ],
@@ -318,5 +350,6 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
 }

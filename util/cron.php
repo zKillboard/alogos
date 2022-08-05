@@ -30,8 +30,7 @@ function detectLogos() {
 		$id = $row["allianceID"];
 		$name = $row["allianceName"];
 
-		//$url = "https://image.eveonline.com/Alliance/{$id}_128.png";
-		$url = "https://imageserver.eveonline.com/Alliance/{$id}_128.png";
+        $url = "https://images.evetech.net/alliances/$id/logo?size=128";
 
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
@@ -40,14 +39,15 @@ function detectLogos() {
 		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
 		curl_setopt($ch, CURLOPT_TIMEOUT, 30); //timeout in seconds
 		$logo = curl_exec($ch);
+        $md5 = md5($logo);
 		$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
 		Db::execute("update al_alliances set lastChecked = now() where allianceID = :id", array(":id" => $id));
 		if ($httpCode == 302) {
 			Db::execute("update al_alliances set logoReleased = null where allianceID = :id", array(":id" => $id));
 		}
-		else if ($httpCode == 200) {
-echo "$id $name $httpCode\n";
+		else if ($httpCode == 200 && $md5 != "ba1d1c8d4b383b6fff6355687c5b0733") {
+            echo "$id $name $md5\n";
 			Db::execute("update al_alliances set logoReleased = now() where allianceID = :id and logoReleased is null", array(":id" => $id));
 		}
 	}
