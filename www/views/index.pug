@@ -1,0 +1,55 @@
+mixin alliance(info)
+  .pull-left(style='text-align: center; width: 64px; height: 100px !important; max-height: 90px; margin-right: 1em; overflow: hidden; text-overflow: ellipsis;')
+    a(target='_blank', href='https://zkillboard.com/alliance/' + info.allianceID + '/')
+      img.eveimage.img-rounded(src='https://image.eveonline.com/Alliance/' + info.allianceID + '_64.png', style='width: 64px; height: 64px;', rel='tooltip', title='{{ info.allianceName|escape }}')
+    small= '<' + info.shortName + '>'
+
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='description', content='logos.zzeve.com is for showing the newest alliance logos within the MMO Eve Online')
+    meta(name='title', content='logos.zzeve.com /')
+    meta(name='keywords', content='eve-online, eve, ccp, ccp games,  massively, multiplayer, online, role, playing, game, mmorpg')
+    meta(name='robots', content='index,follow')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+    title Alliance Logos
+
+    link(href='/css/bootstrap-combined.min.2.2.2.css', rel='stylesheet')
+    link(href='/css/main.css', rel='stylesheet')
+    script(src='/js/jquery.min.1.8.3.js')
+    script(src='/js/bootstrap.min.2.2.2.js')
+  body
+  .container
+    .navbar.container
+      .navbar-inner
+        li.brand(href='/')
+          img.img-rounded(src='https://image.eveonline.com/Alliance/1_32.png', style='padding: 0; margin: 0; background-color: #111; height: 25px; width: 25px;')
+          | &nbsp; Alliance Logos
+    h5
+      | Latest Alliance Logos 
+      small
+        | (sorted by alliance age)        
+    .row
+      .span12
+        .well.pull-left(style='margin-right: 1em; padding-left: 1em;')
+          each info in latest
+            +alliance(info)
+    h5
+      | Alliances with Logos 
+      small (sorted by alliance creation date)
+    .row
+      .span12
+          for allis, created in grouped
+            .well.pull-left(style='margin-right: 1em; padding-left: 1em;')
+              h4= created
+              for info in allis
+                +alliance(info)
+
+    .footer
+      hr
+      .pull-left
+        | Brought to you by a bored 
+        a(target='_blank' href='http://evewho.com/pilot/Squizz+Caphinator') Squizz Caphinator
