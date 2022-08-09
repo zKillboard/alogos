@@ -15,7 +15,6 @@ module.exports = {
         if (grouped[info.created] == undefined) grouped[info.created] = [];
         grouped[info.created].push(info);
       }
-      console.log(grouped);
 
       return {
           package: {
