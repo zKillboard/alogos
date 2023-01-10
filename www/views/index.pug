@@ -1,7 +1,7 @@
 mixin alliance(info)
   .pull-left(style='text-align: center; width: 64px; height: 100px !important; max-height: 90px; margin-right: 1em; overflow: hidden; text-overflow: ellipsis;')
     a(target='_blank', href='https://zkillboard.com/alliance/' + info.allianceID + '/')
-      img.eveimage.img-rounded(src='https://image.eveonline.com/Alliance/' + info.allianceID + '_64.png', style='width: 64px; height: 64px;', rel='tooltip', title='{{ info.allianceName|escape }}')
+      img.eveimage.img-rounded(src='https://image.eveonline.com/Alliance/' + info.allianceID + '_64.png', style='width: 64px; height: 64px;', rel='tooltip', title=info.allianceName)
     small= '<' + info.shortName + '>'
 
 doctype html
