@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "fundamen": "0.1.3"
+    "fundamen": "0.2.*"
   }
 }
